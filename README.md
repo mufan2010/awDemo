@@ -31,6 +31,11 @@ git checkout -b YOUR-USERNAME
 > from utils.ali.api import ali_api
 > ali_api.pay.pc.direct("洗发水", "1231312", "100", "http://www.notycy.com")
 
+#微信jsapi支付：
+from utils.wx.api import wx_api
+wx_pay = wx_api.pay.jsapi.WeChatJSAPI("prepay_id", "timestamp=None", "nonce_str=None")
+wx_order = wx_api.pay.order.WeChatOrder("body", "out_trade_no", "total_fee", "spbill_create_ip", "notify_url", "JSAPI")
+
 # 消息类使用
 
 > from utils.wx.api import wx_api
